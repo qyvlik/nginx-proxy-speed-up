@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+
+  speed-up:
+    image: nginx:1.15.5-alpine
+    volumes:
+      - ./speed-up/conf.d:/etc/nginx/conf.d/:ro
+      - ./speed-up/nginx.conf:/etc/nginx/nginx.conf:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    ports:
+      - "80:80"
+    dns:
+      - 1.1.1.1
