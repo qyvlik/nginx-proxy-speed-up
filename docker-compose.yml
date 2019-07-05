@@ -9,6 +9,7 @@ services:
       - ./speed-up/nginx.conf:/etc/nginx/nginx.conf:ro
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
+      - ${NGINX_LOG_PATH}:/var/log/nginx/
     ports:
       - "80:80"
     dns:
